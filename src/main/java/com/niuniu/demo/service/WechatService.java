@@ -221,11 +221,11 @@ public class WechatService {
                             default:
                                 return;
                         }
-//                        try {
-//                            log.info("发送模板成功：{}", wxMpService.getTemplateMsgService().sendTemplateMsg(templateMessage));
-//                        } catch (WxErrorException e) {
-//                            log.error("发送模板失败", e);
-//                        }
+                        try {
+                            log.info("发送模板成功：{}", wxMpService.getTemplateMsgService().sendTemplateMsg(templateMessage));
+                        } catch (WxErrorException e) {
+                            log.error("发送模板失败", e);
+                        }
 
                         log.info("用户：{}发送消息：{}", openId, JSON.toJSONString(templateMessage));
 
