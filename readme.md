@@ -7,6 +7,7 @@
     3. 新增测试模板 
        1. 模板标题：懒猪猪的每天提醒（可以随便输）
        2. 模板内容：
+       ```
           {{title.DATA}}
           {{time.DATA}}
           今天是我们认识的第{{day.DATA}}天
@@ -20,6 +21,7 @@
           今天的你:{{summary.DATA}}
           送你一句油油的话语：{{chp.DATA}}
           鸡汤鸡汤：{{du.DATA}}
+        ```
        3. 添加就能获取到模板ID
   
 
@@ -29,7 +31,7 @@
     3. 注意:前要有个空格，不然格式错误
     4. lbs:
         key:为高德地图接口天气api的私钥（去这里申请填进去https://lbs.amap.com/api/webservice/guide/api/weatherinfo）
-    5. constellation
+    5. constellation: 
         key:为聚合星座接口api的私钥（不过这个免费只能请求30次/天，还要实名认真，有点坑。https://www.juhe.cn/docs/api/id/58）
 * 所有东西完成后，打开项目的cmd路径（直接在文件夹路径上敲cmd回车）,敲命令:java -jar wechat-demo-0.0.1-SNAPSHOT.jar
 等待启动完成后，网页上调用http://localhost:8081/wechat/demo/wechat/sendMessage,就能收到推送消息了，每天8点会定时发送，但服务要一直开着，
