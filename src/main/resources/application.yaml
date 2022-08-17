@@ -17,8 +17,8 @@ wechat:
         #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: true
         filterOpenIds:
-        #          - 微信用户号
-        #          - oK0U562Y5ijqYRpGUtNRs0vxxxWU
+#          - 微信用户号
+#          - oK0U562Y5ijqYRpGUtNRs0vxxxWU
         parameter:
           #这是默认的设置，如果有用户没设置参数，就按此参数
           default:
