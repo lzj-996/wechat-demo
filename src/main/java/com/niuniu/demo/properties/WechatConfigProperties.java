@@ -19,5 +19,7 @@ public class WechatConfigProperties {
 
     private String appSecret;
 
+    private String singleTemplateId;
+
     private Map<String, WechatTemplate> template;
 }
