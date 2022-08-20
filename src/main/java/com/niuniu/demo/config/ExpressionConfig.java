@@ -438,7 +438,6 @@ public class ExpressionConfig {
         EXPRESSION_LIST.add(s26);
         EXPRESSION_LIST.add(s27);
         EXPRESSION_LIST.add(s28);
-        EXPRESSION_LIST.add(s29);
         EXPRESSION_LIST.add(s30);
         EXPRESSION_LIST.add(s31);
         EXPRESSION_LIST.add(s32);
