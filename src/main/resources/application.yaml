@@ -9,6 +9,7 @@ wechat:
     appId: 填写微信appId
     #微信appSecret
     appSecret: 填写微信appSecret
+    token: 填写微信token
     #配置一个文字的模板ID
     singleTemplateId:
     template:

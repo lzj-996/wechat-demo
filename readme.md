@@ -32,12 +32,15 @@
        {{data5.DATA}}
         ```
        **拿到模板ID，添加到application.yaml文件的singleTemplateId字段**
-       5. 添加颜文字模板（如添加了会自动随机发一个颜文字，目前就20个，后面可能会添加），可以和分页模板用同一个，把模板ID，添加到application.yaml文件的emoticonsTemplate：templateId处
+       5. 新增颜文字模板（如添加了会自动随机发一个颜文字，目前就30个，后面可能会添加），可以和分页模板用同一个，把模板ID，添加到application.yaml文件的emoticonsTemplate：templateId处
        ```
        {{data1.DATA}}
-        ```
-
-
+       ```
+       6. 新增智障自动对话功能（需要部署在云服务或者使用花生壳之类的内网穿透工具（如花生壳主机填：127.0.0.1，内网端口：8081））
+          1. 需要在微信测试后台接口配置信息，添加url和token
+             url填写：http://你的ip或域名/wechat/demo/wechat/msg
+             token填写随意，然后把token复制到配置文件的token处，启动服务按提交
+          2. 直接发送消息到订阅号
 
 * 打开了这个文件：src/main/resources/application.yaml
     1. 把从微信后台的appId、appSecret、templateId、用户openId替换掉（多个用户可以继续添加用户openId）

@@ -359,7 +359,7 @@ public class WechatService {
      *
      * @return
      */
-    private String getDu() {
+    public String getDu() {
         try {
             String url = "https://api.shadiao.pro/du";
             ResponseEntity<Object> forEntity = REST_TEMPLATE.getForEntity(url, Object.class);
