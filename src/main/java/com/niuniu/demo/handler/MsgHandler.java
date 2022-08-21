@@ -15,6 +15,7 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,27 +30,17 @@ import static me.chanjar.weixin.common.api.WxConsts.XmlMsgType;
 @Slf4j
 public class MsgHandler extends AbstractHandler {
 
-    /**
-     * 当前机器人类型
-     * 1.yqk
-     * 2.sz
-     */
-    private static String CURRENT_BOT_TYPE = "1";
-
     private static final String YQK_BOT_TYPE = "1";
 
     private static final String SZ_BOT_TYPE = "2";
 
     private static final List<String> BOT_TYPE_LIST = new ArrayList<>();
+    private static final Map<String, String> CURRENT_BOT_TYPE_MAP = new HashMap<>();
 
     static {
         BOT_TYPE_LIST.add(YQK_BOT_TYPE);
         BOT_TYPE_LIST.add(SZ_BOT_TYPE);
     }
-
-    @Autowired
-    @Lazy
-    private WechatService wechatService;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
@@ -59,8 +50,9 @@ public class MsgHandler extends AbstractHandler {
         //如果是文字
         if (wxMessage.getMsgType().equals(XmlMsgType.TEXT)) {
             if (BOT_TYPE_LIST.contains(wxMessage.getContent())) {
-                CURRENT_BOT_TYPE = wxMessage.getContent();
-                String msg = "切换成功，当前选手为：智障机器人" + CURRENT_BOT_TYPE + "号";
+                String currentBotType = CURRENT_BOT_TYPE_MAP.getOrDefault(wxMessage.getOpenId(),"-1");
+                CURRENT_BOT_TYPE_MAP.put(wxMessage.getOpenId(),wxMessage.getContent());
+                String msg = "切换成功，当前选手为：智障机器人" + currentBotType + "号";
                 log.info("回复微信消息：{}", msg);
                 return WxMpXmlOutMessage.TEXT()
                         .content(msg)
@@ -69,7 +61,8 @@ public class MsgHandler extends AbstractHandler {
                         .build();
             }
 
-            String retarded = getBot(wxMessage.getContent(), CURRENT_BOT_TYPE);
+            String currentBotType = CURRENT_BOT_TYPE_MAP.getOrDefault(wxMessage.getOpenId(),"-1");
+            String retarded = getBot(wxMessage.getContent(), currentBotType);
             log.info("回复微信消息：{}", retarded);
             return WxMpXmlOutMessage.TEXT()
                     .content(retarded)
@@ -108,7 +101,7 @@ public class MsgHandler extends AbstractHandler {
                 break;
         }
         if (StrUtil.isEmpty(reMsg)) {
-            reMsg = "我炸了我网络好像有问题，当前为智障机器人" + CURRENT_BOT_TYPE + "号,可以请按对应数字切换智障聊天机器人：" + JSON.toJSONString(BOT_TYPE_LIST);
+            reMsg = "我炸了我网络好像有问题，当前为智障机器人" + currentBotType + "号,可以请按对应数字切换智障聊天机器人：" + JSON.toJSONString(BOT_TYPE_LIST);
         }
         return reMsg;
     }
