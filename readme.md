@@ -43,7 +43,7 @@
           ```
           server {
                      listen       80;
-                 server_name  121.37.250.193;
+                 server_name  你的ip或域名;
                      location  /wechat/demo {
                      proxy_pass  http://127.0.0.1:8081/wechat/demo;
                      proxy_redirect     off;
