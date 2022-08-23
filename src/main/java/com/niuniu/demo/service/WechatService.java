@@ -157,7 +157,7 @@ public class WechatService {
     private PersonalInfo personalInfo;
 
 
-    @Scheduled(cron = "0 0 8 * * ?")
+//    @Scheduled(cron = "0 0 8 * * ?")
     public void sendMpWechatMessage() {
         try {
             WxMpUserList wxMpUserList = wxMpService.getUserService().userList(null);

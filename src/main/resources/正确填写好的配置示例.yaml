@@ -1,26 +1,19 @@
-server:
-  servlet:
-    context-path: /wechat/demo
-  port: 8081
-
 wechat:
   config:
     #微信appId
-    appId: 填写微信appId
+    appId: wxd42c35fc8232a248053
     #微信appSecret
-    appSecret: 填写微信appSecret
-    token: 填写微信token
-    #配置一个文字的模板ID
-    singleTemplateId:
+    appSecret: 0c9cfc858323dass90544d287a87
+    token: adasd12324
+    singleTemplateId: 7Ck2b8RmhKN_vK8CD6PL5sdaddeDZYACKvfhzI
     template:
       #早安模板
       morningTemplate:
         #模板ID
-        templateId: 填写模板ID
+        templateId: Llu3XJgT6-TTaqqOW1sdadadVIYidveFsjs7cymcy-Qegg
         #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: true
         filterOpenIds:
-#          - oK0U562Y5ijqYRpGUtNRs0vxxxWU
         parameter:
           #这是默认的设置，如果有用户没设置参数，就按此参数
           default:
@@ -32,19 +25,21 @@ wechat:
             #居住地点，高德地图api下载查询 https://lbs.amap.com/api/webservice/download
             cityCode: 440100
             constellation: 双子座
-          #把‘填写你的需要特定配置的微信用户号’覆盖位微信用户ID，可以对照正确填写好的配置示例，多用户可以按照格式继续添加下去
-          填写你的需要特定配置的微信用户号:
+          #用户openID，多用户可以按照格式继续添加下去
+          oK0U561wgH8LIV3S5c8CyM_guA-I:
             title: 早上好呀呀鸭
-            meetDate: '2021-08-11'
-            city: 肇庆
+            meetDate: '2022-08-08'
+            city: 佛山
             cityCode: 440600
-            constellation: 狮子座
-      #颜文字模板
+            constellation: 白羊座
       emoticonsTemplate:
-        templateId: 填写模板ID
+        #模板ID
+        templateId: 7Ck2b8RmhKN_vK8CD6PL5sdaddeDZYACKvfhzI
+        #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: true
         filterOpenIds:
         parameter:
+          #这是默认的设置，如果有用户没设置参数，就按此参数
           default:
             title: 1
 #发送者个人信息
@@ -52,8 +47,9 @@ personal:
   info:
     constellation: 双子座
 
+
 lbs:
-  key: 填写高德地图key
+  key: fb0cd9bsfes7b1c7sadadd19b81f1
 
 constellation:
-  key: 填写星座接口key
+  key: 2a0dddd347883e8bsdsddd
