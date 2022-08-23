@@ -4,6 +4,8 @@
 name: wechat-send-msg
 
 on:
+  push:
+    branches: [ master ]
   schedule:
   # 定时任务，在每天的7点25分，有延时所以时间提早
     - cron: '5 23 * * *'
