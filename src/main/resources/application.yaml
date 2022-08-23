@@ -1,10 +1,10 @@
 server:
   servlet:
     context-path: /wechat/demo
-  port:: 8081
+  port: 8081
 
 wechat:
-  config:::
+  config:
     #微信appId
     appId: 填写微信appId
     #微信appSecret
@@ -12,7 +12,7 @@ wechat:
     token: 填写微信token
     #配置一个文字的模板ID
     singleTemplateId:
-    template:
+    template:12323
       #早安模板
       morningTemplate:
         #模板ID
