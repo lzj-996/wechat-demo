@@ -50,9 +50,8 @@ public class MsgHandler extends AbstractHandler {
         //如果是文字
         if (wxMessage.getMsgType().equals(XmlMsgType.TEXT)) {
             if (BOT_TYPE_LIST.contains(wxMessage.getContent())) {
-                String currentBotType = CURRENT_BOT_TYPE_MAP.getOrDefault(wxMessage.getOpenId(),"-1");
                 CURRENT_BOT_TYPE_MAP.put(wxMessage.getOpenId(),wxMessage.getContent());
-                String msg = "切换成功，当前选手为：智障机器人" + currentBotType + "号";
+                String msg = "切换成功，当前选手为：智障机器人" + wxMessage.getContent() + "号";
                 log.info("回复微信消息：{}", msg);
                 return WxMpXmlOutMessage.TEXT()
                         .content(msg)
@@ -61,7 +60,7 @@ public class MsgHandler extends AbstractHandler {
                         .build();
             }
 
-            String currentBotType = CURRENT_BOT_TYPE_MAP.getOrDefault(wxMessage.getOpenId(),"-1");
+            String currentBotType = CURRENT_BOT_TYPE_MAP.getOrDefault(wxMessage.getOpenId(),"1");
             String retarded = getBot(wxMessage.getContent(), currentBotType);
             log.info("回复微信消息：{}", retarded);
             return WxMpXmlOutMessage.TEXT()
