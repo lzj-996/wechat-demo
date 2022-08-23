@@ -12,7 +12,7 @@ wechat:
     token: 填写微信token
     #配置一个文字的模板ID
     singleTemplateId:
-    template:12323
+    template:
       #早安模板
       morningTemplate:
         #模板ID
