@@ -5,11 +5,6 @@ server:
 
 wechat:
   config:
-    #微信appId
-    appId: 填写微信appId
-    #微信appSecret
-    appSecret: 填写微信appSecret
-    token: 填写微信token
     #配置一个文字的模板ID
     singleTemplateId:
     template:
@@ -52,8 +47,3 @@ personal:
   info:
     constellation: 双子座
 
-lbs:
-  key: 填写高德地图key
-
-constellation:
-  key: 填写星座接口key

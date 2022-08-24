@@ -157,7 +157,7 @@ public class WechatService {
     private PersonalInfo personalInfo;
 
 
-//    @Scheduled(cron = "0 0 8 * * ?")
+    //    @Scheduled(cron = "0 0 8 * * ?")
     public void sendMpWechatMessage() {
         try {
             WxMpUserList wxMpUserList = wxMpService.getUserService().userList(null);
@@ -178,9 +178,9 @@ public class WechatService {
             if (filterOpenIds == null) {
                 filterOpenIds = new ArrayList<>();
             }
-            if (wechatTemplate.getAllSend() && !wechatTemplate.getFilterOpenIds().contains(openId)) {
+            if (wechatTemplate.getAllSend() && !filterOpenIds.contains(openId)) {
                 //全部发送，排除过滤的
-            } else if (!wechatTemplate.getAllSend() && wechatTemplate.getFilterOpenIds().contains(openId)) {
+            } else if (!wechatTemplate.getAllSend() && filterOpenIds.contains(openId)) {
                 //只发送过滤的
             } else {
                 return;
@@ -196,6 +196,7 @@ public class WechatService {
                     }).ifPresent(baseTemplateParameter -> {
                         if ("填写模板ID".equals(wechatTemplate.getTemplateId())) {
                             log.error("{}模板ID还没有进行配置，跳过发送", template);
+                            return;
                         }
                         Random random = new Random();
                         WxMpTemplateMessage templateMessage = WxMpTemplateMessage.builder()

@@ -1,9 +1,5 @@
 wechat:
   config:
-    #微信appId
-    appId: wxd42c35fc8232a248053
-    #微信appSecret
-    appSecret: 0c9cfc858323dass90544d287a87
     token: adasd12324
     singleTemplateId: 7Ck2b8RmhKN_vK8CD6PL5sdaddeDZYACKvfhzI
     template:
@@ -46,10 +42,3 @@ wechat:
 personal:
   info:
     constellation: 双子座
-
-
-lbs:
-  key: fb0cd9bsfes7b1c7sadadd19b81f1
-
-constellation:
-  key: 2a0dddd347883e8bsdsddd

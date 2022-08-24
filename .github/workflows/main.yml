@@ -28,4 +28,4 @@ jobs:
     - name: start project
       run: |
         cd target
-        java -jar wechat-demo-0.0.1-SNAPSHOT.jar
+        java -jar wechat-demo-0.0.1-SNAPSHOT.jar --wechat.config.appId=${{ secrets.APP_ID }} --wechat.config.appSecret=${{ secrets.APP_SECRET }} --lbs.key=${{ secrets.LBS_KEY }} --constellation.key=${{ secrets.CONSTELLATION_KEY }}
