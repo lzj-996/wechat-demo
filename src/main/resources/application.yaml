@@ -11,7 +11,7 @@ wechat:
       #早安模板
       morningTemplate:
         #模板ID
-        templateId: 填写模板ID
+        templateId: yKre1Fw4Mm_Hk7biT8Csfvm3uE7Q7vRANYxG9Lh1ZLw
         #是否关注的用户全发送，ture为是，当值为ture时，sendOpenId 为排除发送对象的微信用户，当值为false为否，sendOpenId为发送对象的微信用户
         allSend: true
         filterOpenIds:
@@ -20,20 +20,20 @@ wechat:
           #这是默认的设置，如果有用户没设置参数，就按此参数
           default:
             #早安话语
-            title: 早上好呀呀鸭
+            title: 早上好呀宝贝
             #你们的相遇时间
-            meetDate: '1996-06-18'
-            city: 广州
+            meetDate: '2021-12-31'
+            city: 驻马店
             #居住地点，高德地图api下载查询 https://lbs.amap.com/api/webservice/download
-            cityCode: 440100
-            constellation: 双子座
+            cityCode: 4117000
+            constellation: 处女座
           #把‘填写你的需要特定配置的微信用户号’覆盖位微信用户ID，可以对照正确填写好的配置示例，多用户可以按照格式继续添加下去
           填写你的需要特定配置的微信用户号:
-            title: 早上好呀呀鸭
-            meetDate: '2021-08-11'
-            city: 肇庆
-            cityCode: 440600
-            constellation: 狮子座
+            title: 早上好呀宝贝
+            meetDate: '2021-12-31'
+            city: 驻马店肇庆
+            cityCode: 411700
+            constellation: 处女座
       #颜文字模板
       emoticonsTemplate:
         templateId: 填写模板ID
