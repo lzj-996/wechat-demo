@@ -20,20 +20,20 @@ wechat:
           #这是默认的设置，如果有用户没设置参数，就按此参数
           default:
             #早安话语
-            title: 早上好呀呀鸭
+            title: 早上好呀哥哥
             #你们的相遇时间
-            meetDate: '1996-06-18'
-            city: 广州
+            meetDate: '2022-07-21'
+            city: 牡丹江
             #居住地点，高德地图api下载查询 https://lbs.amap.com/api/webservice/download
             cityCode: 440100
-            constellation: 双子座
+            constellation: 狮子座
           #把‘填写你的需要特定配置的微信用户号’覆盖位微信用户ID，可以对照正确填写好的配置示例，多用户可以按照格式继续添加下去
           填写你的需要特定配置的微信用户号:
             title: 早上好呀呀鸭
-            meetDate: '2021-08-11'
-            city: 肇庆
+            meetDate: '2022-07-21'
+            city: 郑州
             cityCode: 440600
-            constellation: 狮子座
+            constellation: 水瓶
       #颜文字模板
       emoticonsTemplate:
         templateId: 填写模板ID
@@ -45,5 +45,5 @@ wechat:
 #发送者个人信息
 personal:
   info:
-    constellation: 双子座
+    constellation: 水瓶
 
