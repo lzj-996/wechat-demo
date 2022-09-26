@@ -25,6 +25,7 @@ import org.springframework.web.client.RestTemplate;
 import java.net.URLEncoder;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -270,8 +271,8 @@ public class WechatService {
         String summary = constellation.getOrDefault("summary", "桃花运有点猛").toString();
 
         templateMessage.addData(new WxMpTemplateData("title", morningTemplateParameter.getTitle(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-        templateMessage.addData(new WxMpTemplateData("time", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
-        templateMessage.addData(new WxMpTemplateData("day", LocalDate.now().toEpochDay() - meetDate.toEpochDay() + 1 + "", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+        templateMessage.addData(new WxMpTemplateData("time", LocalDateTime.now(ZoneId.of("+08:00")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
+        templateMessage.addData(new WxMpTemplateData("day", LocalDate.now(ZoneId.of("+08:00")).toEpochDay() - meetDate.toEpochDay() + 1 + "", COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("state", state, COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("city", morningTemplateParameter.getCity(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
         templateMessage.addData(new WxMpTemplateData("dayWeather", weather.getOrDefault("dayweather", "风云大变").toString(), COLOR_LIST.get(random.nextInt(COLOR_LIST.size()))));
